@@ -65,9 +65,9 @@ class CopieController extends AbstractController
             $mentions = array($mentionD1, $mentionD2, $mentionD3, $mentionD4, $mentionD5);
             $nbMentions = array_count_values($mentions);
 
-            if ($nbMentions['ADM'] == 5) {
+            if (array_key_exists('ADM', $nbMentions) && $nbMentions['ADM'] == 5) {
                 $copie->setMentionFinale('ADM');
-            } elseif ($nbMentions['ADM'] == 4 && $nbMentions['MOY'] == 1) {
+            } elseif (array_key_exists('ADM', $nbMentions) && $nbMentions['ADM'] == 4 && array_key_exists('MOY', $nbMentions)) {
                 $copie->setMentionFinale('ADM');
             } else {
                 $copie->setMentionFinale('AJ');

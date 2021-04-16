@@ -16,6 +16,7 @@ class EpreuveType extends AbstractType
     {
         $builder
             ->add('barre', NumberType::class, [
+                'label' => 'Barre',
                 'scale' => 2,
             ])
             ->add('nomUFR', TextType::class, [

@@ -19,8 +19,11 @@ class EtudiantType extends AbstractType
             ])
             ->add('nom', TextType::class, [
                 'attr' => ['class' => 'text-uppercase'],
+                'label' => 'Nom',
             ])
-            ->add('groupe', IntegerType::class)
+            ->add('groupe', IntegerType::class, [
+                'label' => 'Groupe',
+            ])
         ;
     }
 

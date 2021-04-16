@@ -21,9 +21,11 @@ class CopieType extends AbstractType
     {
         $builder
             ->add('correcteur', TextType::class, [
+                'label' => 'Correcteur',
                 'attr' => ['class' => 'text-uppercase'],
             ])
             ->add('salle', EntityType::class, [
+                'label' => 'Salle',
                 'class' => Salle::class,
                 'multiple' => false,
                 'choice_label' => function ($salle) {
@@ -31,6 +33,7 @@ class CopieType extends AbstractType
                 },
             ])
             ->add('epreuve', EntityType::class, [
+                'label' => 'Epreuve',
                 'class' => Epreuve::class,
                 'multiple' => false,
                 'choice_label' => function ($epreuve) {
@@ -42,6 +45,7 @@ class CopieType extends AbstractType
                 },
             ])
             ->add('etudiant', EntityType::class, [
+                'label' => 'Etudiant',
                 'class' => Etudiant::class,
                 'multiple' => false,
                 'choice_label' => function ($etudiant) {
@@ -53,6 +57,7 @@ class CopieType extends AbstractType
                 },
             ])
             ->add('vague', TextType::class, [
+                'label' => 'Vague',
                 'attr' => ['class' => 'text-uppercase'],
             ])
             ->add('noteD1', NumberType::class, [

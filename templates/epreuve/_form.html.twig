@@ -1,6 +1,47 @@
-<div class="container">
-{{ form_start(form) }}
-    {{ form_widget(form) }}
+{{ form_start(form, {'attr':{'class': 'needs-validation', 'novalidate': 'true'}}) }}
+    <div class="form-group">
+        <label for="{{ form.barre.vars.id }}">{{ form.barre.vars.label }}</label>
+        {{ form_widget(form.barre, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.barre) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.barre) }}</div>
+  </div>
+
+    <div class="form-group">
+        <label for="{{ form.nomUFR.vars.id }}">{{ form.nomUFR.vars.label }}</label>
+        {{ form_widget(form.nomUFR, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.nomUFR) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.nomUFR) }}</div>
+  </div>
+
+    <div class="form-group">
+        <label for="{{ form.annee.vars.id }}">{{ form.annee.vars.label }}</label>
+        {{ form_widget(form.annee, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.annee) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.annee) }}</div>
+  </div>
     <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}
-</div>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>

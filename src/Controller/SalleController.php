@@ -28,8 +28,7 @@ class SalleController extends AbstractController
     /**
      * @Route("/new", name="salle_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
-    {
+    function new (Request $request): Response {
         $salle = new Salle();
         $form = $this->createForm(SalleType::class, $salle);
         $form->handleRequest($request);
@@ -83,7 +82,7 @@ class SalleController extends AbstractController
      */
     public function delete(Request $request, Salle $salle): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$salle->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $salle->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($salle);
             $entityManager->flush();

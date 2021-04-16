@@ -1,6 +1,120 @@
-<div class="container">
-{{ form_start(form) }}
-    {{ form_widget(form) }}
+{{ form_start(form, {'attr':{'class': 'needs-validation', 'novalidate': 'true'}}) }}
+    <div class="form-group">
+        <label for="{{ form.correcteur.vars.id }}">{{ form.correcteur.vars.label }}</label>
+        {{ form_widget(form.correcteur, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.correcteur) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.correcteur) }}</div>
+  </div>
+
+    <div class="form-group">
+        <label for="{{ form.etudiant.vars.id }}">{{ form.salle.vars.label }}</label>
+        {{ form_widget(form.salle, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.salle) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.salle) }}</div>
+  </div>
+
+<div class="form-group">
+        <label for="{{ form.epreuve.vars.id }}">{{ form.epreuve.vars.label }}</label>
+        {{ form_widget(form.epreuve, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.epreuve) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.epreuve) }}</div>
+  </div>
+
+      <div class="form-group">
+        <label for="{{ form.etudiant.vars.id }}">{{ form.etudiant.vars.label }}</label>
+        {{ form_widget(form.etudiant, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.etudiant) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.etudiant) }}</div>
+  </div>
+
+    <div class="form-group">
+        <label for="{{ form.vague.vars.id }}">{{ form.vague.vars.label }}</label>
+        {{ form_widget(form.vague, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.vague) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.vague) }}</div>
+  </div>
+
+      <div class="form-group">
+        <label for="{{ form.noteD1.vars.id }}">{{ form.noteD1.vars.label }}</label>
+        {{ form_widget(form.noteD1, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.noteD1) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.noteD1) }}</div>
+  </div>
+
+      <div class="form-group">
+        <label for="{{ form.noteD2.vars.id }}">{{ form.noteD2.vars.label }}</label>
+        {{ form_widget(form.noteD2, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.noteD2) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.noteD2) }}</div>
+  </div>
+
+      <div class="form-group">
+        <label for="{{ form.noteTableur.vars.id }}">{{ form.noteTableur.vars.label }}</label>
+        {{ form_widget(form.noteTableur, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.noteTableur) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.noteTableur) }}</div>
+  </div>
+
+      <div class="form-group">
+        <label for="{{ form.noteTraitementTexte.vars.id }}">{{ form.noteTraitementTexte.vars.label }}</label>
+        {{ form_widget(form.noteTraitementTexte, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.noteTraitementTexte) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.noteTraitementTexte) }}</div>
+  </div>
+
+      <div class="form-group">
+        <label for="{{ form.notePresentationAO.vars.id }}">{{ form.notePresentationAO.vars.label }}</label>
+        {{ form_widget(form.notePresentationAO, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.notePresentationAO) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.notePresentationAO) }}</div>
+  </div>
+
+      <div class="form-group">
+        <label for="{{ form.noteD4.vars.id }}">{{ form.noteD4.vars.label }}</label>
+        {{ form_widget(form.noteD4, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.noteD4) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.noteD4) }}</div>
+  </div>
+
+      <div class="form-group">
+        <label for="{{ form.noteD5.vars.id }}">{{ form.noteD5.vars.label }}</label>
+        {{ form_widget(form.noteD5, {'attr': {'class': 'form-control'}}) }}
+
+        <small class="form-text text-muted">{{ form_help(form.noteD5) }}</small>
+        <div class="invalid-feedback">{{ form_errors(form.noteD5) }}</div>
+  </div>
+
     <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}
-</div>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>

@@ -17,7 +17,9 @@ class SalleType extends AbstractType
             ->add('capacite', IntegerType::class, [
                 'label' => 'Capacité',
             ])
-            ->add('lieu', TextType::class)
+            ->add('lieu', TextType::class, [
+                'label' => 'Lieu',
+            ])
             ->add('batiment', TextType::class, [
                 'label' => 'Bâtiment',
             ])

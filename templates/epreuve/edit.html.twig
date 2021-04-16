@@ -3,9 +3,13 @@
 {% block title %}Modifier Epreuve{% endblock %}
 
 {% block body %}
-    {{ include('epreuve/_form.html.twig', {'button_label': 'Modifier'}) }}
-
-    <a href="{{ path('epreuve_index') }}">retour</a>
-
-    {{ include('epreuve/_delete_form.html.twig') }}
+<a class="btn btn-secondary ml-2 mt-2" href="{{ path('epreuve_index') }}">Retour</a>
+{{ include('epreuve/_delete_form.html.twig') }}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-8">
+            {{ include('epreuve/_form.html.twig', {'button_label': 'Modifier'}) }}
+        </div>
+    </div>
+</div>
 {% endblock %}
