@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <a class="navbar-brand" href="{{ path('home') }}">Gestion C2i</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="{{ app.request.get('_route') == 'home' ? 'nav-link active' : 'nav-link' }}" href="{{ path('home') }}">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="{{ app.request.get('_route') == 'etudiant_index' ? 'nav-link active' : 'nav-link' }}" href="{{ path('etudiant_index') }}">Etudiants</a>
+      </li>
+      <li class="nav-item">
+        <a class="{{ app.request.get('_route') == 'copie_index' ? 'nav-link active' : 'nav-link' }}" href="{{ path('copie_index') }}">Notes</a>
+      </li>
+      <li class="nav-item">
+        <a class="{{ app.request.get('_route') == 'salle_index' ? 'nav-link active' : 'nav-link' }}" href="{{ path('salle_index') }}">Salles</a>
+      </li>
+      <li class="nav-item">
+        <a class="{{ app.request.get('_route') == 'epreuve_index' ? 'nav-link active' : 'nav-link' }}" href="{{ path('epreuve_index') }}">Epreuves</a>
+      </li>
+      <li class="nav-item">
+        <a class="{{ app.request.get('_route') == 'bilan_u_f_r' ? 'nav-link active' : 'nav-link' }}" href="{{ path('bilan_u_f_r') }}">Bilan UFR</a>
+      </li>
+    </ul>
+  </div>
+</nav>

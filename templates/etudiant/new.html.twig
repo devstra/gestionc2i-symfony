@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter Etudiant{% endblock %}
+
+{% block body %}
+    {{ include('etudiant/_form.html.twig') }}
+
+    <a class="btn btn-secondary ml-2 mt-1" href="{{ path('etudiant_index') }}">Retour</a>
+{% endblock %}

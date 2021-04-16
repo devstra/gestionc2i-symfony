@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir Copie{% endblock %}
+
+{% block body %}
+    <a class="btn btn-secondary mt-1 mb-1 ml-1" href="{{ path('copie_index') }}">Retour</a>
+    <a class="btn btn-info mt-1 mb-1 ml-1 mr-1 float-right" href="{{ path('copie_edit', {'id': copie.id}) }}">Modifier</a>
+    {{ include('copie/_delete_form.html.twig') }}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ copie.id }}</td>
+            </tr>
+            <tr>
+                <th>NoteFinale</th>
+                <td>{{ copie.noteFinale }}</td>
+            </tr>
+            <tr>
+                <th>MentionFinale</th>
+                <td>{{ copie.mentionFinale }}</td>
+            </tr>
+            <tr>
+                <th>Correcteur</th>
+                <td>{{ copie.correcteur }}</td>
+            </tr>
+            <tr>
+                <th>Vague</th>
+                <td>{{ copie.vague }}</td>
+            </tr>
+            <tr>
+                <th>NoteD1</th>
+                <td>{{ copie.noteD1 }}</td>
+            </tr>
+            <tr>
+                <th>NoteD2</th>
+                <td>{{ copie.noteD2 }}</td>
+            </tr>
+            <tr>
+                <th>NoteD3</th>
+                <td>{{ copie.noteD3 }}</td>
+            </tr>
+            <tr>
+                <th>NoteTableur</th>
+                <td>{{ copie.noteTableur }}</td>
+            </tr>
+            <tr>
+                <th>NoteTraitementTexte</th>
+                <td>{{ copie.noteTraitementTexte }}</td>
+            </tr>
+            <tr>
+                <th>NotePresentationAO</th>
+                <td>{{ copie.notePresentationAO }}</td>
+            </tr>
+            <tr>
+                <th>NoteD4</th>
+                <td>{{ copie.noteD4 }}</td>
+            </tr>
+            <tr>
+                <th>NoteD5</th>
+                <td>{{ copie.noteD5 }}</td>
+            </tr>
+            <tr>
+                <th>MentionD1</th>
+                <td>{{ copie.mentionD1 }}</td>
+            </tr>
+            <tr>
+                <th>MentionD2</th>
+                <td>{{ copie.mentionD2 }}</td>
+            </tr>
+            <tr>
+                <th>MentionD3</th>
+                <td>{{ copie.mentionD3 }}</td>
+            </tr>
+            <tr>
+                <th>MentionD4</th>
+                <td>{{ copie.mentionD4 }}</td>
+            </tr>
+            <tr>
+                <th>MentionD5</th>
+                <td>{{ copie.mentionD5 }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

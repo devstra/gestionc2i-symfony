@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir Etudiant{% endblock %}
+
+{% block body %}
+    <a class="btn btn-secondary mt-1 mb-1 ml-1" href="{{ path('etudiant_index') }}">Retour</a>
+    <a class="btn btn-info mt-1 mb-1 ml-1 mr-1 float-right" href="{{ path('etudiant_edit', {'id': etudiant.id}) }}">Modifier</a>
+    {{ include('etudiant/_delete_form.html.twig') }}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etudiant.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ etudiant.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ etudiant.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Groupe</th>
+                <td>{{ etudiant.groupe }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

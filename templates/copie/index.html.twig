@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir Copies{% endblock %}
+
+{% block javascripts %}
+<link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.production.min.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper"></div>
+    <a href="{{ path('copie_new') }}" class="btn btn-success mt-2 ml-3">Ajouter nouveau</a>
+<script>
+new gridjs.Grid({
+  columns: [
+    "Id",
+    "Note",
+    "Mention",
+    "Vague",
+    "Correcteur",
+    "Etudiant",
+    "NoteD1",
+    "NoteD2",
+    "NoteD3",
+    "NoteTableur",
+    "NoteTraitementTexte",
+    "NotePresentationAO",
+    "NoteD4",
+    "NoteD5",
+    "MentionD1",
+    "MentionD2",
+    "MentionD3",
+    "MentionD4",
+    "MentionD5",
+    { 
+        name: 'Actions',
+        formatter: (_, row) => gridjs.html(`
+            <a class="btn btn-primary" href='${row.cells[0].data}'">Voir</a>
+            <a class="btn btn-warning" href='${row.cells[0].data}/edit'>Modifier</a>
+        `)
+    },
+],
+  search: true,
+  sort: true,
+  data: [
+  {% for copie in copies %}
+    ["{{ copie.id }}",
+    "{{ copie.noteFinale }}",
+    "{{ copie.mentionFinale }}",
+    "{{ copie.vague }}",
+    "{{ copie.correcteur }}",
+    "{{ copie.etudiant.prenom }} {{ copie.etudiant.nom }}",
+    "{{ copie.noteD1 }}",
+    "{{ copie.noteD2 }}",
+    "{{ copie.noteD3 }}",
+    "{{ copie.noteTableur }}",
+    "{{ copie.noteTraitementTexte }}",
+    "{{ copie.notePresentationAO }}",
+    "{{ copie.noteD4 }}",
+    "{{ copie.noteD5 }}",
+    "{{ copie.mentionD1 }}",
+    "{{ copie.mentionD2 }}",
+    "{{ copie.mentionD3 }}",
+    "{{ copie.mentionD4 }}",
+    "{{ copie.mentionD5 }}",
+    null],
+  {% endfor %}
+  ],
+}).render(document.getElementById("wrapper"));
+</script>
+{% endblock %}
+

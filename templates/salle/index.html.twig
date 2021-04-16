@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir Salles{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Capacite</th>
+                <th>Lieu</th>
+                <th>Batiment</th>
+                <th>Etage</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for salle in salles %}
+            <tr>
+                <td>{{ salle.id }}</td>
+                <td>{{ salle.capacite }}</td>
+                <td>{{ salle.lieu }}</td>
+                <td>{{ salle.batiment }}</td>
+                <td>{{ salle.etage }}</td>
+                <td>
+                <div class="btn-group" role="group">
+                <a class="btn btn-primary" href="{{ path('salle_show', {'id': salle.id}) }}">Voir</a>
+                <a class="btn btn-warning" href="{{ path('salle_edit', {'id': salle.id}) }}">Modifier</a>
+                </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('salle_new') }}" class="btn btn-success mt-2 ml-3">Ajouter nouveau</a>
+{% endblock %}

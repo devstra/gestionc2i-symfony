@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir Epreuves{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Barre</th>
+                <th>NomUFR</th>
+                <th>Annee</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for epreuve in epreuves %}
+            <tr>
+                <td>{{ epreuve.id }}</td>
+                <td>{{ epreuve.barre }}</td>
+                <td>{{ epreuve.nomUFR }}</td>
+                <td>{{ epreuve.annee }}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-primary" href="{{ path('epreuve_show', {'id': epreuve.id}) }}">Voir</a>
+                        <a class="btn btn-warning" href="{{ path('epreuve_edit', {'id': epreuve.id}) }}">Modifier</a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('epreuve_new') }}" class="btn btn-success mt-2 ml-3">Ajouter nouveau</a>
+{% endblock %}

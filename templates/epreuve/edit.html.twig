@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Epreuve{% endblock %}
+
+{% block body %}
+    {{ include('epreuve/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('epreuve_index') }}">retour</a>
+
+    {{ include('epreuve/_delete_form.html.twig') }}
+{% endblock %}

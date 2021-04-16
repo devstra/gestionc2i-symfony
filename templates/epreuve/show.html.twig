@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir Epreuve{% endblock %}
+
+{% block body %}
+    <a class="btn btn-secondary mt-1 mb-1 ml-1" href="{{ path('epreuve_index') }}">Retour</a>
+    <a class="btn btn-info mt-1 mb-1 ml-1 mr-1 float-right" href="{{ path('epreuve_edit', {'id': epreuve.id}) }}">Modifier</a>
+    {{ include('epreuve/_delete_form.html.twig') }}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ epreuve.id }}</td>
+            </tr>
+            <tr>
+                <th>Barre</th>
+                <td>{{ epreuve.barre }}</td>
+            </tr>
+            <tr>
+                <th>NomUFR</th>
+                <td>{{ epreuve.nomUFR }}</td>
+            </tr>
+            <tr>
+                <th>Annee</th>
+                <td>{{ epreuve.annee }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

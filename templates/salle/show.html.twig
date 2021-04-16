@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir Salle{% endblock %}
+
+{% block body %}
+    <a class="btn btn-secondary mt-1 mb-1 ml-1" href="{{ path('salle_index') }}">Retour</a>
+    <a class="btn btn-info mt-1 mb-1 ml-1 mr-1 float-right" href="{{ path('salle_edit', {'id': salle.id}) }}">Modifier</a>
+    {{ include('salle/_delete_form.html.twig') }}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ salle.id }}</td>
+            </tr>
+            <tr>
+                <th>Capacite</th>
+                <td>{{ salle.capacite }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ salle.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Batiment</th>
+                <td>{{ salle.batiment }}</td>
+            </tr>
+            <tr>
+                <th>Etage</th>
+                <td>{{ salle.etage }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

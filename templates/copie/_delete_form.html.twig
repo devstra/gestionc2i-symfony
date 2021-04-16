@@ -1,0 +1,4 @@
+<form class="float-right mb-1 mt-1 d-inline" method="post" action="{{ path('copie_delete', {'id': copie.id}) }}" onsubmit="return confirm('Etes-vous sûr?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ copie.id) }}">
+    <button class="btn btn-danger">Supprimer</button>
+</form>

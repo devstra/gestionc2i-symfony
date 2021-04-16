@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Copie{% endblock %}
+
+{% block body %}
+    <h1>modifier Copie</h1>
+
+    {{ include('copie/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a class="btn btn-secondary ml-2 mt-1" href="{{ path('copie_index') }}">Retour</a>
+
+    {{ include('copie/_delete_form.html.twig') }}
+{% endblock %}

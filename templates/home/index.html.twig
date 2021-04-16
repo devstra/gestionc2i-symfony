@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block javascripts %}
+<style>
+div.d-flex {
+  height: 100vh;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="d-flex flex-row align-items-center justify-content-center">
+<div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Importer des données</h5>
+          <p>Charger des données depuis un fichier CSV</p>
+            <form action="{{ path('upload-csv') }}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="token" value="{{ csrf_token('upload') }}" />
+            <div>
+                <input type="file" name="myfile" id="myfile">
+            </div>
+            <button class="btn btn-primary mt-4" type="submit">Importer</button>
+          </form>
+        </div>
+      </div>
+</div>
+{% endblock %}

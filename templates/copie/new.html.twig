@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Copie{% endblock %}
+
+{% block body %}
+    {{ include('copie/_form.html.twig') }}
+
+    <a class="btn btn-secondary ml-2 mt-1" href="{{ path('copie_index') }}">Retour</a>
+{% endblock %}
